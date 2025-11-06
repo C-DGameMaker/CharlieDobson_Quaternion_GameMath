@@ -7,6 +7,9 @@ public class CubeLook : MonoBehaviour
 
     public GameObject target;
     public Vector3 targetPos;
+
+    public GameObject upTarget;
+    public Vector3 upTargetPos;
     void Start()
     {
         startPos = transform.position;
@@ -16,8 +19,8 @@ public class CubeLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetPos = target.transform.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(targetPos, Vector3.forward);
+        upTargetPos = upTarget.transform.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(upTargetPos, Vector3.forward);
 
         transform.rotation = rotation;
     }
