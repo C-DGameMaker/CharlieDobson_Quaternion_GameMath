@@ -152,11 +152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   child: {fileID: 2009927071}
-  startPos: {x: 0, y: 0, z: 0}
+  startPos: {fileID: 2009927075}
+  startPosVect: {x: 0, y: 0, z: 0}
   target: {fileID: 740178056}
-  targetPos: {x: 0, y: 0, z: 0}
   upTarget: {fileID: 1577487557}
-  upTargetPos: {x: 0, y: 0, z: 0}
+  time: 0
 --- !u!65 &116206298
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -3,25 +3,27 @@ using UnityEngine;
 public class CubeLook : MonoBehaviour
 {
     public GameObject child;
-    public Vector3 startPos;
+    public Transform startPos;
+    public Vector3 startPosVect;
 
     public GameObject target;
-    public Vector3 targetPos;
+    private Vector3 targetPos;
 
     public GameObject upTarget;
-    public Vector3 upTargetPos;
+    private Vector3 upTargetPos;
+
+    public float time = 0.0f;
     void Start()
     {
-        startPos = transform.position;
-        child.transform.position = startPos + transform.forward;
+        startPosVect = 
+        child.transform.position = transform.position + transform.forward;
     }
 
     // Update is called once per frame
     void Update()
     {
-        upTargetPos = upTarget.transform.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(upTargetPos, Vector3.forward);
+        time = time + Time.deltaTime;
+        transform.rotation = Quaternion.Slerp(startPos.rotation, Quaternion.LookRotation(upTarget.transform.position - transform.position), time);
 
-        transform.rotation = rotation;
     }
 }
