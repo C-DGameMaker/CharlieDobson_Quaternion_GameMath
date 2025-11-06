@@ -15,7 +15,7 @@ public class CubeLook : MonoBehaviour
     public float time = 0.0f;
     void Start()
     {
-        startPosVect = 
+        
         child.transform.position = transform.position + transform.forward;
     }
 
